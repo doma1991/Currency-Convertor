@@ -1,0 +1,25 @@
+﻿@page
+@model CurrencyConvertor.Pages.CurrencyConvertorModel
+@{
+    ViewData["Title"] = "Currency Convertor";
+}
+
+<div>
+    <h1>Currency Convertor</h1>
+    <div asp-validation-summary="All"></div>
+    <form method="post">
+        <p>amount</p>
+        <input asp-for="amount" id="amount" type="number" min="0" required />
+        <select id="Select1" name="Select1">
+                <option value="EUR" selected>EUR</option>
+                <option value="GBP">GBP</option>
+            </select>
+            <select id="Select2" name="Select2">
+                <option value="EUR">EUR</option>
+                <option value="GBP" selected>GBP</option>
+            </select>
+        <input id="ok-button" type="submit" value="OK" />
+    </form>
+    <div id="result">Amount: @this.Model.amount</div>
+    <div id="result2">Double the amount: @this.Model.money</div>
+</div>
