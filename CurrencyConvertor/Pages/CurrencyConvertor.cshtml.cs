@@ -14,21 +14,16 @@ namespace CurrencyConvertor.Pages
         public Double money;
         public String selectionOne;
         public String selectionTwo;
-
         static Double eurToGbp(Double eur)
         {
           return eur * 0.91;
         }
-
         static Double gbpToEur(Double gbp)
         {
             return gbp * 1.10;
         }
-
-
         public void OnGet()
         {
-
         }
         public void OnPost()
         {
@@ -39,6 +34,14 @@ namespace CurrencyConvertor.Pages
             if (selectionOne == "EUR" && selectionTwo == "GBP")
             {
                 this.money = eurToGbp(this.amount);
+            }
+            else if (selectionOne == "GBP" && selectionTwo == "EUR")
+            {
+                this.money = gbpToEur(this.amount);
+            }
+            else 
+            {
+                this.money = this.amount;
             }
         }
     }
